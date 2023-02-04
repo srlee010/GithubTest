@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Sono&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="header.css">
+  <!-- google font 링크는 css link하단에 -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <title>Nav var</title>
+  <!-- fontawesome 가입 후 받은 kitcode는 header안에 아무데나 넣으면 된다 -->
+  <script src="https://kit.fontawesome.com/2359127377.js" crossorigin="anonymous"></script>
+  <!-- Basic한 js 코드는 body 코드 최하단에 위치하는게 좋습니다 html 코드 파싱하는 마지막에 JS 코드를 읽게됨-->
+  <script src="header.js"></script>
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar_logo">
+      <i class="fa-brands fa-github"></i>
+      <!-- fontawesome에서 선택한 icon주소를 복붙하기-->
+      <a href="https://blog.naver.com/loleego" target="_blank">Sora's TIL</a>
+    </div>
+    <ul class="navbar_menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">SmallTalk</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">References</a></li>
+    </ul>
+
+    <ul class="navbar_icons">
+      <li><i class="fa-brands fa-facebook"></i></li>
+      <li><i class="fa-brands fa-instagram"></i></li>
+    </ul>
+
+    <!--햄버거메뉴는 flexbox안에 넣기보다는 별개로 따로 우측 상단에 위치하는게 좋음 -->
+    <a href="#" class="navbar_toggleBtn"><i class="fa-solid fa-bars"></i></a>
+
+
+  </nav>
+</body>
+</html>

@@ -1,0 +1,231 @@
+:root {
+  /* color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090; 
+  --grey-ligt-color: #e0e0e0;
+  /* size */
+  --padding: 12px;
+  --avatar-size: 36px;
+  /* font size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* 패딩이나 마진을 줄 때 이들이 포함되어서 box사이즈가 결정되도록 하는 것 */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button,
+button:focus {
+/* 브라우저에 기본적으로 적용된 button style 없애고 시작하기 */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-magnifying-glass {
+  margin-right: var(--padding);
+}
+
+/* video player */
+.player {
+  /* 상단에 스크롤 고정하기 위해서 sticky 검색 후 사용하기 */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* Video Info */
+body > .info {
+  padding: var(--padding);
+}
+
+/* 적용하고자 하는 범위를 최대한 작게 작게 적용하는게 좋다 */
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+  list-style: none;
+}
+
+.info .metadata .hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  /* css line clamp를 이용해서 지정한 줄 이상은 말줄임표시 */
+  font-size: var(--font-medium);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-right: var(--padding);
+  }
+
+.info .metadata .titleAndButton .moreBtn {
+    height: 100%;
+  }
+
+.info .views {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+  }
+
+  /* Action Buttons */
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+  list-style: none;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+  /* 액션 버튼이 텍스트 위에 중앙정렬되게 만드는 팁 */
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+
+.info .actions button i.active {
+  /* 액션 버튼이 active라고 표시된 애들만 파란색으로 보여주기 */
+  color: var(--blue-color)
+}
+
+/* Channel Description */
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-ligt-color);
+  border-bottom: 1px solid var(--grey-ligt-color);
+  margin: var(--padding);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  /* 프로필 테두리를 동그랗게 만드는 법 */
+  border-radius: 50%;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up Next */ 
+.UpNext {
+  padding: 0 var(--padding);
+}
+
+.UpNext > .title {
+  /* 바로 그 뒤에 나오는 자식요소에게만 적용되게 하는 방법? > 사용하기 */
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.UpNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.UpNext .item .img {
+  /* flex 줄어들때나 늘어날때 각각 1, 1씩 하고 basis는 요소마다 정한다*/
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+
+.UpNext .item .img img {
+  /* image를 div박스안에 한번 묶어준 후 너비를 100%로 하면 반응형됨 */
+  width: 100%;
+}
+
+.UpNext .item .info {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.UpNext .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.UpNext .item .info .title {
+  font-size: var(--font-small);
+}
+
+.UpNext .item .info .name,
+.UpNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
