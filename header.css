@@ -116,7 +116,7 @@ a {
    toggle이 클릭될 때는 보여줄 수 있게 하려면 */
   .navbar_menu.active,
   .navbar_icons.active {
-    display: flexbox;
+    display: flex;
   }
 }
 
